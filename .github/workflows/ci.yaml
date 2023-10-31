@@ -42,11 +42,5 @@ jobs:
       - name: 'Install dependencies'
         run: 'composer update --no-progress $COMPOSER_OPTIONS'
 
-      - name: 'Install PHPUnit'
-        run: 'vendor/bin/simple-phpunit install'
-
       - name: 'Run PhpSpec'
         run: 'vendor/bin/phpspec run'
-
-      - name: 'Run PHPUnit'
-        run: 'SYMFONY_DEPRECATIONS_HELPER=weak vendor/bin/simple-phpunit'
