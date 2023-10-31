@@ -27,7 +27,6 @@ class TimestampNormalizerSpec extends ObjectBehavior
         $date->setTimezone(new \DateTimeZone('UTC'));
         $date->setDate(2004, 2, 12);
         $date->setTime(15, 19, 21);
-
         $this->normalize($date)->shouldReturn('2004-02-12T15:19:21+00:00');
     }
 
@@ -49,8 +48,7 @@ class TimestampNormalizerSpec extends ObjectBehavior
     function it_denormalizes_iso_8601_formatted_strings_to_datetime_objects()
     {
         $date = $this->denormalize('2004-02-12T15:19:21+00:00', 'DateTime');
-
-        $date->getTimezone()->shouldBeLike(new \DateTimeZone('UTC'));
+        $date->getTimezone()->shouldBeLike(new \DateTimeZone('+00:00'));
         $date->format('Y-m-d H:i:s')->shouldReturn('2004-02-12 15:19:21');
     }
 }
