@@ -21,11 +21,31 @@ use Xabbuh\XApi\Serializer\SerializerFactoryInterface;
  */
 final class SerializerFactory implements SerializerFactoryInterface
 {
-    private $serializer;
+    private SerializerInterface $serializer;
 
+    /**
+     * @param SerializerInterface|null $serializer
+     */
     public function __construct(SerializerInterface $serializer = null)
     {
         $this->serializer = $serializer ?: Serializer::createSerializer();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createActivitySerializer()
+    {
+        return new ActivitySerializer($this->serializer);
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createPersonSerializer()
+    {
+        return new PersonSerializer($this->serializer);
     }
 
     /**
