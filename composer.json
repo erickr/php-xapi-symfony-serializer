@@ -12,17 +12,17 @@
         }
     ],
     "require": {
-        "php": "^7.1",
-        "php-xapi/exception": "^0.2.0",
-        "php-xapi/model": "^1.2 || ^2.1 || ^3.0",
-        "php-xapi/serializer": "^2.1.1",
-        "symfony/serializer": "^4.4 || ^5.2 || ^5.3"
+        "php": "^7.4 || ^8.0",
+        "php-xapi/exception": "^1.0",
+        "php-xapi/model": "^4.0",
+        "php-xapi/serializer": "^4.0",
+        "symfony/serializer": "^5.3 || ^6.0"
     },
     "require-dev": {
-        "php-xapi/json-test-fixtures": "^2.0",
-        "php-xapi/test-fixtures": "^1.0",
-        "phpspec/phpspec": "~2.3",
-        "symfony/phpunit-bridge": "^5.2"
+        "php-xapi/json-test-fixtures": "^3.0",
+        "php-xapi/test-fixtures": "^2.0",
+        "phpspec/phpspec": "^7.0",
+        "symfony/phpunit-bridge": "^5.0 || ^6.0"
     },
     "minimum-stability": "dev",
     "provide": {
@@ -39,9 +39,25 @@
             "Xabbuh\\XApi\\Serializer\\Symfony\\Tests\\": "tests/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.2.x-dev"
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/erickr/php-xapi-exception.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/erickr/php-xapi-model.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/erickr/php-xapi-json-test-fixtures.git"
+        },        {
+            "type": "git",
+            "url": "https://github.com/erickr/php-xapi-test-fixtures.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/erickr/php-xapi-serializer.git"
         }
-    }
+    ]
 }
